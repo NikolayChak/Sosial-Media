@@ -1,0 +1,13 @@
+footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+footer p{
+    background-color: var(--theme-color);
+    padding: 3.5rem;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
