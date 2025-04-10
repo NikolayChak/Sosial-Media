@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'RaleWay', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --theme-color: #3edaa2;
+    --hover-color: #eeeaea8f;
+    --text-color:#4d4a4a;
+    --body-bg:rgb(248,244,248);
+}
+
+body{
+    background-color: var(--body-bg);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+}

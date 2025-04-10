@@ -1,0 +1,442 @@
+
+header {
+    background-color: var(--theme-color);
+    width: 100%;
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+header a {
+    color: #ffffff;
+}
+
+.logo {
+    width: 10%;
+}
+
+.logo img {
+    width: 5rem;
+    height: 5rem;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.navbar {
+    display: flex;
+    width: 90%;
+    justify-content: right;
+    position: relative;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    padding-inline: 2rem;
+    padding-top: 0.9rem;
+}
+
+.navbar .menu {
+    flex-basis: 65%;
+    align-items: center;
+    position: relative;
+}
+
+.navbar .sideMenu {
+    flex-basis: 35%;
+    position: relative;
+}
+
+.icon-nav {
+    font-size: 3rem;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: azure;
+    width: 25rem;
+    height: 4rem;
+    border-radius: 2rem;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search i {
+    color: #4d4a4a;
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+    padding-right: 1rem;
+}
+
+.search input {
+    width: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+}
+
+.user-icon img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+
+.online {
+    position: relative;
+}
+
+.online::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: lime;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+
+.navbar .menu .submenu {
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    border-radius: 0.8rem;
+    left: 0;
+    top: 100%;
+    text-align: left;
+    font-size: 2rem;
+    display: none;
+}
+
+.navbar li:hover > .submenu {
+    display: block;
+    width: 30rem;
+}
+
+.navbar .submenu li {
+    padding: 2.5rem;
+}
+
+.submenu a {
+    color: var(--theme-color);
+}
+
+.navbar .submenu li:hover {
+    background-color: var(--hover-color);
+}
+
+.submenu .drop-icons {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--theme-color);
+    color: #ffffff;
+    text-align: center;
+    line-height: 3rem;
+    margin-right: 1rem;
+}
+
+.navbar .menu .submenu .submenu-1 {
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    top: 20%;
+    left: 100%;
+    font-size: 2rem;
+    display: none;
+}
+
+.navbar .submenu li:hover > .submenu-1 {
+    display: block;
+    width: 22rem;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.navbar .submenu label i {
+    float: right;
+    display: block;
+}
+
+.navbar .sideMenu .submenu {
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    border-radius: 0.8rem;
+    left: 0;
+    top: 100%;
+    text-align: left;
+    display: none;
+    font-size: 2rem;
+}
+
+.navbar .menu label i,
+.navbar .sideMenu label i {
+    display: none;
+}
+
+/*Responsive of navigation*/
+@media screen and (max-width: 1027px) {
+    .navbar .sideMenu .submenu{
+        left: -15%;
+    }
+
+    .navbar li:hover > .submenu{
+        width: 22rem;
+    }
+}
+
+
+@media screen and (max-width: 790px) {
+    .logo {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .logo img {
+        width: 4.5rem;
+        height: 4.5rem;
+        padding-top: 0.2rem;
+    }
+
+    .navbar ul {
+        display: block;
+    }
+
+    header {
+        height: 4.2rem;
+    }
+
+    .navbar {
+        position: fixed;
+        background-color: var(--theme-color);
+        height: 200vh;
+        width: 70vw;
+        top: 0;
+        left: 0;
+        display: block;
+    }
+
+    .navbar li {
+        font-weight: 600;
+        padding-block: 1.5rem;
+        border-bottom: 1px solid #ffffff;
+    }
+
+    .navbar .online::after {
+        right: unset;
+        left: 3rem;
+    }
+
+    .navbar .menu .submenu,
+    .navbar .menu .submenu .submenu-1,
+    .navbar .sideMenu .submenu {
+        position: unset;
+        background-color: unset;
+        box-shadow: unset;
+        border-radius: unset;
+    }
+
+    .submenu a {
+        color: #ffffff;
+    }
+
+    .navbar .menu .submenu li:hover,
+    .navbar .sideMenu .submenu li:hover {
+        background-color: unset;
+    }
+
+    .navbar .menu .submenu li,
+    .navbar .sideMenu .submenu li {
+        border-bottom: unset;
+        padding-block: 1.2rem;
+    }
+
+    .navbar li:hover > .submenu,
+    .navbar .submenu li:hover > .submenu-1 {
+        width: 100%;
+    }
+
+    .navbar .menu,
+    .navbar .submenu {
+        text-align: left;
+        width: 100%;
+    }
+
+    .navbar .menu li:hover,
+    .navbar .sideMenu li:hover {
+        border-left: 4px solid #ffffff;
+    }
+
+    /*label style*/
+    .navbar .menu .submenu li:hover,
+    .navbar .sideMenu .submenu li:hover {
+        border-left: unset;
+    }
+
+    .navbar .menu label i,
+    .navbar .sideMenu label i {
+        display: block;
+        float: right;
+        transition: .5s;
+    }
+
+    .navbar label input:checked ~ i {
+        transform: rotate(180deg);
+    }
+
+    .navbar label:has(input:checked) ~ ul {
+        height: 0;
+    }
+
+    /*Responsive bar style*/
+    .navbar .resNav {
+        display: block;
+        position: absolute;
+        background-color: #000000;
+        width: 4rem;
+        height: 4rem;
+        top: 0;
+        left: 100%;
+        padding: 1rem;
+    }
+
+    .navbar .resNav span {
+        display: block;
+        background-color: #ffffff;
+        width: 2rem;
+        height: 0.3rem;
+        margin-block: 0.3rem;
+        transition: 1s;
+    }
+
+    .navbar {
+        transform: translate(-100%, 0);
+    }
+
+    .navbar:has(input[name="resNav"]:checked) {
+        transform: translate(0, 0);
+    }
+
+    /*x-close button*/
+    .navbar:has(input[name="resNav"]:checked) .resNav span:nth-child(2) {
+        opacity: 0;
+        transition: 0s;
+    }
+
+    .navbar:has(input[name="resNav"]:checked) .resNav span:nth-child(1) {
+        transform: rotate(45deg) translate(3px, 5px);
+    }
+
+    .navbar:has(input[name="resNav"]:checked) .resNav span:nth-child(3) {
+        transform: rotate(-45deg) translate(4px, -5px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .logo {
+        right: 1.5rem;
+    }
+
+}
+
+@media screen and (max-width: 402px) {
+    .logo img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .search{
+        width: 100%;
+    }
+
+    .navbar .resNav{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .navbar .resNav span{
+        width: 1.2rem;
+        height: 0.2rem;
+        margin-block: 0.2rem;
+    }
+
+    .navbar:has(input[name="resNav"]:checked) .resNav span:nth-child(1) {
+        transform: rotate(45deg) translate(3px, 2.5px);
+    }
+
+    .navbar:has(input[name="resNav"]:checked) .resNav span:nth-child(3) {
+        transform: rotate(-45deg) translate(3px, -2.5px);
+    }
+
+    header{
+        height: 3.5rem;
+    }
+
+    .navbar{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 330px){
+    .navbar{
+        width: 85vw;
+        height: unset;
+    }
+
+    .navbar .submenu li{
+        padding: 0.2rem;
+    }
+
+    .submenu .drop-icons{
+        width: 1rem;
+        height: 1rem;
+        line-height: 1rem;
+        margin-right: 0.3rem;
+    }
+
+    .search input{
+        font-size: 1rem;
+    }
+
+    .search i{
+        margin-left: 0.2rem;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
